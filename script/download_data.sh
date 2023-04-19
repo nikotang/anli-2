@@ -24,32 +24,32 @@ if [[ ! -d ${DIR_TMP}/data ]]; then
     mkdir ${DIR_TMP}/data
 fi
 
-# download the snli data.
-cd ${DIR_TMP}/data
-if [[ ! -d  snli_1.0 ]]; then
-    wget https://nlp.stanford.edu/projects/snli/snli_1.0.zip
-    unzip "snli_1.0.zip"
-    rm -rf "snli_1.0.zip" && rm -rf "__MACOSX"
-    echo "SNLI Ready"
-fi
+# # download the snli data.
+# cd ${DIR_TMP}/data
+# if [[ ! -d  snli_1.0 ]]; then
+#     wget https://nlp.stanford.edu/projects/snli/snli_1.0.zip
+#     unzip "snli_1.0.zip"
+#     rm -rf "snli_1.0.zip" && rm -rf "__MACOSX"
+#     echo "SNLI Ready"
+# fi
 
-# download the mnli data.
-cd ${DIR_TMP}/data
-if [[ ! -d  multinli_1.0 ]]; then
-    wget "https://cims.nyu.edu/~sbowman/multinli/multinli_1.0.zip"
-    unzip "multinli_1.0.zip"
-    rm -rf "multinli_1.0.zip" && rm -rf "__MACOSX"
-    echo "MNLI Ready"
-fi
+# # download the mnli data.
+# cd ${DIR_TMP}/data
+# if [[ ! -d  multinli_1.0 ]]; then
+#     wget "https://cims.nyu.edu/~sbowman/multinli/multinli_1.0.zip"
+#     unzip "multinli_1.0.zip"
+#     rm -rf "multinli_1.0.zip" && rm -rf "__MACOSX"
+#     echo "MNLI Ready"
+# fi
 
-# download the fever nli data.
-cd ${DIR_TMP}/data
-if [[ ! -d  nli_fever ]]; then
-    wget "https://www.dropbox.com/s/hylbuaovqwo2zav/nli_fever.zip"
-    unzip "nli_fever.zip"
-    rm -rf "nli_fever.zip" && rm -rf "__MACOSX"
-    echo "FEVER NLI Ready"
-fi
+# # download the fever nli data.
+# cd ${DIR_TMP}/data
+# if [[ ! -d  nli_fever ]]; then
+#     wget "https://www.dropbox.com/s/hylbuaovqwo2zav/nli_fever.zip"
+#     unzip "nli_fever.zip"
+#     rm -rf "nli_fever.zip" && rm -rf "__MACOSX"
+#     echo "FEVER NLI Ready"
+# fi
 
 # download the anli_v0.1
 cd ${DIR_TMP}/data
@@ -62,34 +62,34 @@ fi
 
 ALL_DATA_CHECKED=true
 
-# Check data SNLI:
-cd ${DIR_TMP}/data
-if [[ -f snli_1.0/snli_1.0_train.jsonl ]] && [[ -f snli_1.0/snli_1.0_dev.jsonl ]] && [[ -f snli_1.0/snli_1.0_test.jsonl ]]; then
-    echo "SNLI checked."
-else
-    echo "Some SNLI files are not ready. Please remove the \"snli_1.0\" directory and run download.sh again."
-    ALL_DATA_CHECKED=false
-fi
+# # Check data SNLI:
+# cd ${DIR_TMP}/data
+# if [[ -f snli_1.0/snli_1.0_train.jsonl ]] && [[ -f snli_1.0/snli_1.0_dev.jsonl ]] && [[ -f snli_1.0/snli_1.0_test.jsonl ]]; then
+#     echo "SNLI checked."
+# else
+#     echo "Some SNLI files are not ready. Please remove the \"snli_1.0\" directory and run download.sh again."
+#     ALL_DATA_CHECKED=false
+# fi
 
-# Check data MNLI:
-cd ${DIR_TMP}/data
-if [[ -f multinli_1.0/multinli_1.0_train.jsonl ]] && [[ -f multinli_1.0/multinli_1.0_dev_mismatched.jsonl ]] && [[ -f multinli_1.0/multinli_1.0_dev_matched.jsonl ]]; then
-    echo "MNLI checked."
-else
-    echo "Some MNLI files are not ready. Please remove the \"multinli_1.0\" directory and run download.sh again."
-    ALL_DATA_CHECKED=false
-fi
+# # Check data MNLI:
+# cd ${DIR_TMP}/data
+# if [[ -f multinli_1.0/multinli_1.0_train.jsonl ]] && [[ -f multinli_1.0/multinli_1.0_dev_mismatched.jsonl ]] && [[ -f multinli_1.0/multinli_1.0_dev_matched.jsonl ]]; then
+#     echo "MNLI checked."
+# else
+#     echo "Some MNLI files are not ready. Please remove the \"multinli_1.0\" directory and run download.sh again."
+#     ALL_DATA_CHECKED=false
+# fi
 
-# Check data FEVER NLI:
-cd ${DIR_TMP}/data
-if [[ -f nli_fever/train_fitems.jsonl ]] && \
-[[ -f nli_fever/test_fitems.jsonl ]] && \
-[[ -f nli_fever/dev_fitems.jsonl ]]; then
-    echo "FEVER NLI checked."
-else
-    echo "Some FEVER NLI files are not ready. Please remove the \"nli_fever\" directory and run download.sh again."
-    ALL_DATA_CHECKED=false
-fi
+# # Check data FEVER NLI:
+# cd ${DIR_TMP}/data
+# if [[ -f nli_fever/train_fitems.jsonl ]] && \
+# [[ -f nli_fever/test_fitems.jsonl ]] && \
+# [[ -f nli_fever/dev_fitems.jsonl ]]; then
+#     echo "FEVER NLI checked."
+# else
+#     echo "Some FEVER NLI files are not ready. Please remove the \"nli_fever\" directory and run download.sh again."
+#     ALL_DATA_CHECKED=false
+# fi
 
 # Check data ANLI:
 cd ${DIR_TMP}/data

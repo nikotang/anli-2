@@ -52,7 +52,7 @@ MODEL_CLASSES = {
         "do_lower_case": True,
     },
     "bert-large": {
-        "model_name": "bert-large-uncased",
+        "model_name": "bert-large-uncased-whole-word-masking",
         "tokenizer": BertTokenizer,
         "sequence_classification": BertForSequenceClassification,
         # "padding_token_value": 0,
