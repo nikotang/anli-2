@@ -15,6 +15,7 @@ from transformers import AlbertTokenizer, AlbertForSequenceClassification
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
 from transformers import BartTokenizer, BartForSequenceClassification
 from transformers import ElectraTokenizer, ElectraForSequenceClassification
+from transformers import DebertaTokenizer, DebertaForSequenceClassification
 
 from torch.utils.data import Dataset, DataLoader, DistributedSampler, RandomSampler, SequentialSampler
 import config
@@ -149,6 +150,28 @@ MODEL_CLASSES = {
         "padding_segement_value": 0,
         "padding_att_value": 0,
         "internal_model_name": "electra",
+        'insight_supported': True,
+    },
+    "deberta-base": {
+        "model_name": "microsoft/deberta-base",
+        "tokenizer": DebertaTokenizer,
+        "sequence_classification": DebertaForSequenceClassification,
+        # "padding_token_value": 0,
+        "padding_segement_value": 0,
+        "padding_att_value": 0,
+        "do_lower_case": True,
+        "internal_model_name": "deberta",
+        'insight_supported': True,
+    },
+    "deberta-large": {
+        "model_name": "microsoft/deberta-large",
+        "tokenizer": DebertaTokenizer,
+        "sequence_classification": DebertaForSequenceClassification,
+        # "padding_token_value": 0,
+        "padding_segement_value": 0,
+        "padding_att_value": 0,
+        "do_lower_case": True,
+        "internal_model_name": "deberta",
         'insight_supported': True,
     }
 }
